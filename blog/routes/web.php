@@ -1,9 +1,9 @@
 <?php
 
-Route::get('/','SharedController@view')->name('index');
-Route::get('/home','SharedController@view')->name('home');
+Route::get('/','SharedController@index')->name('index');
+Route::get('/home','SharedController@index')->name('home');
+Route::get('/soft','SharedController@soft');
 Route::get('/qr/{id}','SharedController@qr');
-
 
 Route::get('sitemap', 'GeneratedController@siteMap');
 Route::get('sitemap.xml', 'GeneratedController@siteMap');
