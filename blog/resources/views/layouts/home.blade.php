@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="baidu-site-verification" content="6YzHBUGcGj" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta content='@yield('keywords')'    name='Keywords'>
     <meta content='@yield('description')' name='Description'>

@@ -19,7 +19,6 @@
         }
         .pricing-table a{
             text-decoration: none;
-
         }
     </style>
     <div class="l-content">
