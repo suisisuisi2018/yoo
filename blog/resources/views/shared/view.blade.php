@@ -8,9 +8,10 @@
             Across the Great Wall <br/>we can reach every corner in the world
         </h1>
     </div>
-    <div class="l-content">
-        <div class="pricing-tables pure-g">
 
+    <div class="l-content">
+        <h3 style="text-align: center">pc/移动端可以直接点击二维码添加服务器</h3>
+        <div class="pricing-tables pure-g">
             @foreach($model as $host)
                 <div class="pure-u-1 pure-u-md-1-4 pricing-table-wrap">
                     <div></div>
@@ -20,17 +21,16 @@
                                 <img alt="example1" src="{{ url('qr',['id'=>$host->id]) }}">
                             </a>
                             <div style="display: none;">
-                                <div id="host_{{ $host->id }}">
+                                <div id="host_{{ $host->id }}" >
                                     <img alt="example1" src="{{ url('qr',['id'=>$host->id]) }}" style="width: 90%;margin: 0 auto;display: block">
                                 </div>
                             </div>
-
                         </div>
                         <div class="ssr-link">
                             @if($host->status == 0)
-                                <p style="text-decoration: line-through">{{ $host->ssr }}</p>
+                                <p style="text-decoration: line-through">{{ $host->remarks }}</p>
                             @else
-                                <p>{{ $host->ssr }}</p>
+                                <p>{{ $host->remarks }}</p>
                             @endif
                         </div>
                         <button class="button-choose pure-button btn-copy" data-clipboard-text="{{ $host->ssr }}" >复制</button>

@@ -2,7 +2,7 @@
 
 Route::get('/','SharedController@index')->name('index');
 Route::get('/home','SharedController@index')->name('home');
-Route::get('/soft','SharedController@soft');
+Route::get('/soft','SharedController@soft')->name('soft');
 Route::get('/qr/{id}','SharedController@qr');
 
 Route::get('sitemap', 'GeneratedController@siteMap');

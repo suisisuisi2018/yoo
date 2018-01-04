@@ -26,24 +26,32 @@
         <table class="pure-table pure-table-horizontal">
             <thead>
             <tr>
-                <th>#</th>
+                <th>服务器</th>
+                <th>备注</th>
                 <th>链接</th>
                 <th>状态</th>
-                <th>创建时间</th>
-                <th>修改时间</th>
-                <th></th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
             @foreach($model as $host)
             <tr>
-                <td>{{ $host->id }}</td>
-                <td><div style="width:200px;overflow:hidden;padding: 0;margin: 0">
+                <td>
+                    <div>
+                        {{ $host->host.":".$host->port   }}
+                    </div>
+
+                </td>
+                <td>
+                    <div style="width:100px;overflow:hidden;padding: 0;margin: 0">
+                        {{ $host->remarks  }}
+                    </div>
+                </td>
+                <td>
+
+                    <div style="width:200px;overflow:hidden;padding: 0;margin: 0">
                         <a class="ssr_link" href="{{ $host->ssr }}">{{ $host->ssr }}</a></div></td>
                 <td >{{ $host->status }}</td>
-                <td>{{ $host->created_at }}</td>
-                <td>{{ $host->updated_at }}</td>
                 @if($host->status == 1)
                     <td><a href="/gabe/host/delete" data-id="{{ $host->id }}" class="confirm_delete">可用</a></td>
                     @else

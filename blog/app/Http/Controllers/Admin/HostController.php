@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Config;
 use Mockery\Exception;
 use App\Model\Host;
+use App\Lib\SSR;
 
 class HostController extends BaseAdminController
 {
@@ -31,6 +32,16 @@ class HostController extends BaseAdminController
         if($host  = $model->where('ssr',$ssr)->first()){
             return redirect()->back()->with('message','SSR路径已存在');
         }else{
+            $ssr_detail = SSR::decode($ssr);
+            $model->host = $ssr_detail['host'];
+            $model->port = $ssr_detail['port'];
+            $model->protocol = $ssr_detail['protocol'];
+            $model->method = $ssr_detail['method'];
+            $model->obfs = $ssr_detail['obfs'];
+            $model->pwd = $ssr_detail['pwd'];
+            $model->protoparam = $ssr_detail['protoparam'];
+            $model->obfsparam = $ssr_detail['obfsparam'];
+            $model->remarks = $ssr_detail['remarks'];
             $model->ssr = $request->input('ssr');
             $model->status = 1;
             $model->save();
